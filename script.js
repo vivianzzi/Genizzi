@@ -122,3 +122,5 @@ blue.onclick = () => click(3);
 
 // inicio do jogo
 playGame();
+
+//Atualizado com a ajuda de @correavitor4
