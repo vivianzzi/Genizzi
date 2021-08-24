@@ -25,14 +25,50 @@ let shuffleOrder = () => {
 }
 
 // acende a proxima cor
-let lightColor = (element, number) => {
-    number = number * 500;
+let lightColor = (element,number) => {
+
+    
+    //console.log(number);
+
+    
+    let oldColor = window.getComputedStyle(element).backgroundColor;
+    
+    number = number*500;
+    
+    
+    
+
     setTimeout(() => {
-            element.classList.add('selected');
-    }, number - 250);
+        element.style.backgroundColor = oldColor;
+        messageAlertCanBeShow=true;
+        //element.classList.remove('selected');
+        switch(element){
+        
+            case green:
+                element.style.backgroundColor="#ccffcc";
+                break;
+            case red:
+                element.style.backgroundColor="#ffcccc";
+                break;
+            case blue:
+                element.style.backgroundColor="#b3e0ff";
+                break;
+            case yellow:
+                element.style.backgroundColor="#ffffb3";
+                 break;
+        }
+        
+    }, number-250);
+    
     setTimeout(() => {
-            element.classList.remove('selected');
-    });
+        element.style.backgroundColor = oldColor;
+        
+        //element.classList.remove('selected');
+        
+    }, number);
+    
+    
+
 }
 
 // checa se os botoes clicados sao os mesmos da ordem gerada no jogo
